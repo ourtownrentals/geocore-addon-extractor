@@ -1,6 +1,6 @@
 {
   "name": "@ourtownrentals/geocore-addon-extractor",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Extract and format GeoCore addon code with Gulp.",
   "main": "./index.js",
   "homepage": "https://github.com/ourtownrentals/geocore-addon-extractor",
