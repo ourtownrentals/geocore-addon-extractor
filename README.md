@@ -2,22 +2,72 @@
 
 ## Description
 
+Extracts source files from a zip archive into a local source folder
+and normalized the code formatting.
+
+Designed to be used for official [GeoCore] software and addons.
+
+[GeoCore]: https://geodesicsolutions.com/
+
 ## Installation
 
-Add this as a development dependency to your project using [npm] with
+Add this and [gulp] as a development dependency to your project using [npm] with
 
 ```
-$ npm install --save-dev @ourtownrentals/geocore-addon-exractor
+$ npm install --save-dev gulp gulp-cli @ourtownrentals/geocore-addon-exractor
 ```
 
 or using [Yarn] with
 
 ```
-$ yarn add --dev @ourtownrentals/geocore-addon-exractor
+$ yarn add --dev gulp gulp-cli @ourtownrentals/geocore-addon-exractor
 ```
 
+[gulp]: https://gulpjs.com/
 [npm]: https://www.npmjs.com/
 [Yarn]: https://yarnpkg.com/
+
+## Usage
+
+In `package.json` add
+
+```
+{
+  "scripts": {
+    "presrc": "gulp clean",
+    "src": "gulp extract",
+    "postsrc": "gulp process"
+  },
+  "geocore": {
+    "version": "1.0.0",
+    "archive": "Geodesic_core_full_install_zipped_v",
+    "root": "core",
+    "src": "src",
+    "binary": [
+      "zend.php"
+    ]
+  }
+}
+```
+
+Then create `gulpfile.js` with
+
+```js
+'use strict'
+
+const fs = require('fs')
+const path = require('path')
+
+const gulp = require('gulp')
+
+const addonExtractor = require('@ourtownrentals/geocore-addon-extractor').default
+
+const pkg = JSON.parse(fs.readFileSync(
+  path.resolve(__dirname, 'package.json')
+))
+
+addonExtractor(pkg.geocore).map(({name, task}) => gulp.task(name, task))
+```
 
 ## Source Code
 

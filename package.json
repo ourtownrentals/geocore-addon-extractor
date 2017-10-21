@@ -11,8 +11,20 @@
     "name": "Evan Sosenko",
     "email": "evan@ourtownrentals.com"
   },
+  "scripts": {
+    "test": "standard ./*.js"
+  },
   "files": [
     "yarn.lock",
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-filter": "^5.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-vinyl-zip": "^2.1.0",
+    "standard": "^10.0.3"
+  }
 }
