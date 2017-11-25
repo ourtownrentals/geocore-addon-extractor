@@ -26,7 +26,7 @@ const tasks = ({
   root = 'core',
   src = 'src',
   binary = [],
-  version =  null,
+  version = null,
   archive = null
 }) => {
   if (!version) throw new Error('Missing version config')
