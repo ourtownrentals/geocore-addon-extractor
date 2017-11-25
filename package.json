@@ -12,7 +12,9 @@
     "email": "evan@ourtownrentals.com"
   },
   "scripts": {
-    "test": "standard ./*.js"
+    "test": "standard ./*.js",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "files": [
     "package-lock.json",
