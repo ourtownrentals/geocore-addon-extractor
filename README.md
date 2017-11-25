@@ -17,15 +17,8 @@ Add this and [gulp] as a development dependency to your project using [npm] with
 $ npm install --save-dev gulp gulp-cli @ourtownrentals/geocore-addon-exractor
 ```
 
-or using [Yarn] with
-
-```
-$ yarn add --dev gulp gulp-cli @ourtownrentals/geocore-addon-exractor
-```
-
 [gulp]: https://gulpjs.com/
 [npm]: https://www.npmjs.com/
-[Yarn]: https://yarnpkg.com/
 
 ## Usage
 

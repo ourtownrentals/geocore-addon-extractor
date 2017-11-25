@@ -15,7 +15,7 @@
     "test": "standard ./*.js"
   },
   "files": [
-    "yarn.lock",
+    "package-lock.json",
     "index.js"
   ],
   "dependencies": {
